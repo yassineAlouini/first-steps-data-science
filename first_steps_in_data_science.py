@@ -30,7 +30,8 @@ import matplotlib.pylab as plt
 
 # In[ ]:
 
-Kaggle offers many free datasets with lots of 
+Kaggle offers many free datasets with lots of metadata, description, kernels, discussions and so on. <br>
+Today, we will be working with 
 
 
 # ## Data exploration
