@@ -11806,6 +11806,17 @@ div#notebook {
 </div>
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
+<p><a href="https://jupyter.org/">Jupyter</a> notebook is the code environment we will be using today. <br>
+Previously known as ipython notebook, it is an interactive environment that makes prototyping easier for data scientists.</p>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered">
+<div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
 <h2 id="Pandas">Pandas<a class="anchor-link" href="#Pandas">&#182;</a></h2>
 </div>
 </div>
@@ -11815,7 +11826,7 @@ div#notebook {
 </div>
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<p>Pandas is the primary toolbox used for collecting and cleaning datasets from various data sources. <br>
+<p><a href="http://pandas.pydata.org/">Pandas</a> is the primary toolbox used for collecting and cleaning datasets from various data sources. <br>
 Most of the concepts that we are exploring today can be found in the following great <a href="https://github.com/pandas-dev/pandas/blob/master/doc/cheatsheet/Pandas_Cheat_Sheet.pdf">cheatsheet</a></p>
 
 </div>
@@ -11827,6 +11838,51 @@ Most of the concepts that we are exploring today can be found in the following g
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
 <h2 id="Matplotlib">Matplotlib<a class="anchor-link" href="#Matplotlib">&#182;</a></h2>
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered">
+<div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p><a href="http://matplotlib.org/">Matplotlib</a> is the standard and de facto Python library for creating visualizations.</p>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered">
+<div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h2 id="Numerical-and-statistical-(numpy,-scipy,-statsmodels)">Numerical and statistical (numpy, scipy, statsmodels)<a class="anchor-link" href="#Numerical-and-statistical-(numpy,-scipy,-statsmodels)">&#182;</a></h2>
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered">
+<div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>Alongside the above tools, Python offers a set of numerical and statistical packages to perform data analysis. 
+The most famous ones are:</p>
+<ul>
+<li><a href="http://www.numpy.org/">numpy</a>: Base N-dimensional array package</li>
+<li><a href="https://www.scipy.org/scipylib/index.html">scipy</a>: Fundamental library for scientific computing</li>
+<li><a href="http://www.statsmodels.org/stable/">statsmodels</a>: Statistical computations and models for Python</li>
+</ul>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered">
+<div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>Keep in mind that most of the capabilites of the above package are integrated within the Pandas library.</p>
+
 </div>
 </div>
 </div>
@@ -11873,26 +11929,14 @@ Most of the concepts that we are exploring today can be found in the following g
 </div>
 </div>
 </div>
-<div class="cell border-box-sizing code_cell rendered">
-<div class="input">
-<div class="prompt input_prompt">In&nbsp;[&nbsp;]:</div>
-<div class="inner_cell">
-    <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="n">Kaggle</span> <span class="n">offers</span> <span class="n">many</span> <span class="n">free</span> <span class="n">datasets</span> <span class="k">with</span> <span class="n">lots</span> <span class="n">of</span> <span class="n">metadata</span><span class="p">,</span> <span class="n">description</span><span class="p">,</span> <span class="n">kernels</span><span class="p">,</span> <span class="n">discussions</span> <span class="ow">and</span> <span class="n">so</span> <span class="n">on</span><span class="o">.</span> <span class="o">&lt;</span><span class="n">br</span><span class="o">&gt;</span>
-<span class="n">Today</span><span class="p">,</span> <span class="n">we</span> <span class="n">will</span> <span class="n">be</span> <span class="n">working</span> <span class="k">with</span> 
-</pre></div>
-
-</div>
-</div>
-</div>
-
-</div>
 <div class="cell border-box-sizing text_cell rendered">
 <div class="prompt input_prompt">
 </div>
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<h2 id="Data-exploration">Data exploration<a class="anchor-link" href="#Data-exploration">&#182;</a></h2>
+<p>Kaggle offers many free datasets with lots of metadata, description, kernels, discussions and so on. <br>
+Today, we will be working with the San Francisco Salaries dataset. You can download it from here (you need a Kaggle account) or get it from the workshop repository.</p>
+
 </div>
 </div>
 </div>
@@ -11901,7 +11945,7 @@ Most of the concepts that we are exploring today can be found in the following g
 </div>
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<h2 id="Tidying-data">Tidying data<a class="anchor-link" href="#Tidying-data">&#182;</a></h2>
+<h2 id="Data-exploration">Data exploration<a class="anchor-link" href="#Data-exploration">&#182;</a></h2>
 </div>
 </div>
 </div>
@@ -11930,15 +11974,45 @@ Most of the concepts that we are exploring today can be found in the following g
 <div class="text_cell_render border-box-sizing rendered_html">
 <p>In todays's workshop, you have learned:</p>
 <ul>
-<li>About the Python data science ecosytem (some of its parts at least)</li>
+<li>About the Python data science ecosystem (some of its parts at least)</li>
+<li>The concept of a tidy dataset</li>
 <li>How to load a dataset using Pandas</li>
 <li>How to explore a dataset</li>
-<li>The concept of tidy dataset</li>
-<li>How to get a tidy dataset</li>
 <li>How to make simple plots</li>
 </ul>
 <p>I hope this was insightful! <br>
 See you at a next workshop hopefully.</p>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered">
+<div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h1 id="References/-To-go-beyond">References/ To go beyond<a class="anchor-link" href="#References/-To-go-beyond">&#182;</a></h1>
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered">
+<div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>I hope you have enjoyed this workshop. To continue learning, I recommend the following:</p>
+<ul>
+<li>A blog post on how to become a data scientist: <a href="https://www.dataquest.io/blog/how-to-become-a-data-scientist/">https://www.dataquest.io/blog/how-to-become-a-data-scientist/</a> </li>
+<li>Consider trying <a href="https://www.dataquest.io">dataquest</a> and/or <a href="https://www.datacamp.com/">datacamp</a> if you want to learn more about data science using Python. Notice that they both offer some free content but most of it is available for a monthly subscription</li>
+<li><a href="https://www.quora.com/">Quora</a>: one of the best places to ask and answer questions about data science (and any other subject more generally)</li>
+<li><a href="https://www.kaggle.com/">Kaggle</a>: this is a great place to hone your data science skills through producing and reading different kernels (these are their internal variation of notebooks)</li>
+<li>More generally follow great data scientists. Some that I really enjoy reading their work (in no particular order): <ul>
+<li><a href="http://wesmckinney.com/">Wes Mckinney</a>: original creator of Pandas.</li>
+<li><a href="https://tomaugspurger.github.io/">Tom Augspurger</a>: core contributor of Pandas. Has written the <a href="https://tomaugspurger.github.io/modern-1.html">modern Pandas</a> blog posts series (a most read).</li>
+<li><a href="http://staff.washington.edu/jakevdp/">Jake VanderPlas</a>: a data scientist in academia (as he defines himself).</li>
+</ul>
+</li>
+</ul>
 
 </div>
 </div>
