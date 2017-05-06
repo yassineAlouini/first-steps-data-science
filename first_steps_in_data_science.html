@@ -11801,7 +11801,7 @@ div#notebook {
 <p>If you are familiar with Python, create a <code>conda</code> environment and install the need libraries (using the <code>environment.yml</code> file):</p>
 <p><code>conda env create -f environment.yml</code></p>
 <p>Then, activate the environement using:</p>
-<p><code>conda activate worshop</code></p>
+<p><code>conda activate workshop</code></p>
 
 </div>
 </div>
@@ -11930,13 +11930,15 @@ The most famous ones are:</p>
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[9]:</div>
+<div class="prompt input_prompt">In&nbsp;[76]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="kn">import</span> <span class="nn">pandas</span> <span class="k">as</span> <span class="nn">pd</span>
 <span class="n">messy_df</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">({</span><span class="s1">&#39;2016&#39;</span><span class="p">:</span> <span class="p">[</span><span class="mi">1000</span><span class="p">,</span> <span class="mi">2000</span><span class="p">,</span> <span class="mi">3000</span><span class="p">],</span> 
                          <span class="s1">&#39;2017&#39;</span><span class="p">:</span> <span class="p">[</span><span class="mi">1200</span><span class="p">,</span> <span class="mi">1300</span><span class="p">,</span> <span class="mi">4000</span><span class="p">],</span> 
-                         <span class="s1">&#39;company&#39;</span><span class="p">:</span> <span class="p">[</span><span class="s1">&#39;slack&#39;</span><span class="p">,</span> <span class="s1">&#39;twitter&#39;</span><span class="p">,</span> <span class="s1">&#39;twitch&#39;</span><span class="p">]})</span>
+                         <span class="s1">&#39;company&#39;</span><span class="p">:</span> 
+                         <span class="p">[</span><span class="s1">&#39;slack&#39;</span><span class="p">,</span> <span class="s1">&#39;twitter&#39;</span><span class="p">,</span> <span class="s1">&#39;twitch&#39;</span><span class="p">]</span>
+                        <span class="p">})</span>
 </pre></div>
 
 </div>
@@ -12042,10 +12044,12 @@ There are two main ones:</p>
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[24]:</div>
+<div class="prompt input_prompt">In&nbsp;[81]:</div>
 <div class="inner_cell">
     <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="n">tidy_df</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">melt</span><span class="p">(</span><span class="n">messy_df</span><span class="p">,</span> <span class="n">id_vars</span><span class="o">=</span><span class="p">[</span><span class="s1">&#39;company&#39;</span><span class="p">],</span><span class="n">value_name</span><span class="o">=</span><span class="s1">&#39;earnings&#39;</span><span class="p">,</span> <span class="n">var_name</span><span class="o">=</span><span class="s1">&#39;year&#39;</span><span class="p">)</span>
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">tidy_df</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">melt</span><span class="p">(</span><span class="n">messy_df</span><span class="p">,</span> <span class="n">id_vars</span><span class="o">=</span><span class="p">[</span><span class="s1">&#39;company&#39;</span><span class="p">],</span>
+                  <span class="n">value_name</span><span class="o">=</span><span class="s1">&#39;earnings&#39;</span><span class="p">,</span> 
+                  <span class="n">var_name</span><span class="o">=</span><span class="s1">&#39;year&#39;</span><span class="p">)</span>
 </pre></div>
 
 </div>
@@ -12055,7 +12059,7 @@ There are two main ones:</p>
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[25]:</div>
+<div class="prompt input_prompt">In&nbsp;[82]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="n">tidy_df</span>
@@ -12070,7 +12074,7 @@ There are two main ones:</p>
 
 
 <div class="output_area">
-<div class="prompt output_prompt">Out[25]:</div>
+<div class="prompt output_prompt">Out[82]:</div>
 
 
 <div class="output_html rendered_html output_subarea output_execute_result">
@@ -12176,13 +12180,10 @@ There are two main ones:</p>
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[28]:</div>
+<div class="prompt input_prompt">In&nbsp;[83]:</div>
 <div class="inner_cell">
     <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="o">%</span><span class="k">matplotlib</span> inline
-<span class="kn">import</span> <span class="nn">pandas</span> <span class="k">as</span> <span class="nn">pd</span>
-<span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
-<span class="kn">import</span> <span class="nn">matplotlib.pylab</span> <span class="k">as</span> <span class="nn">plt</span>
+<div class=" highlight hl-ipython3"><pre><span></span><span class="kn">import</span> <span class="nn">pandas</span> <span class="k">as</span> <span class="nn">pd</span>
 <span class="kn">import</span> <span class="nn">missingno</span> <span class="k">as</span> <span class="nn">msno</span>
 </pre></div>
 
@@ -12224,7 +12225,7 @@ Let's try it out!</p>
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[29]:</div>
+<div class="prompt input_prompt">In&nbsp;[84]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="n">sf_slaries_df</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">read_csv</span><span class="p">(</span><span class="s1">&#39;data/Salaries.csv&#39;</span><span class="p">)</span>
@@ -12263,10 +12264,10 @@ Let's try it out!</p>
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[30]:</div>
+<div class="prompt input_prompt">In&nbsp;[85]:</div>
 <div class="inner_cell">
     <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="n">sf_slaries_df</span><span class="o">.</span><span class="n">head</span><span class="p">()</span>
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">sf_slaries_df</span><span class="o">.</span><span class="n">head</span><span class="p">(</span><span class="mi">3</span><span class="p">)</span><span class="o">.</span><span class="n">transpose</span><span class="p">()</span>
 </pre></div>
 
 </div>
@@ -12278,7 +12279,7 @@ Let's try it out!</p>
 
 
 <div class="output_area">
-<div class="prompt output_prompt">Out[30]:</div>
+<div class="prompt output_prompt">Out[85]:</div>
 
 
 <div class="output_html rendered_html output_subarea output_execute_result">
@@ -12287,100 +12288,88 @@ Let's try it out!</p>
   <thead>
     <tr style="text-align: right;">
       <th></th>
-      <th>Id</th>
-      <th>EmployeeName</th>
-      <th>JobTitle</th>
-      <th>BasePay</th>
-      <th>OvertimePay</th>
-      <th>OtherPay</th>
-      <th>Benefits</th>
-      <th>TotalPay</th>
-      <th>TotalPayBenefits</th>
-      <th>Year</th>
-      <th>Notes</th>
-      <th>Agency</th>
-      <th>Status</th>
+      <th>0</th>
+      <th>1</th>
+      <th>2</th>
     </tr>
   </thead>
   <tbody>
     <tr>
-      <th>0</th>
+      <th>Id</th>
       <td>1</td>
-      <td>NATHANIEL FORD</td>
-      <td>GENERAL MANAGER-METROPOLITAN TRANSIT AUTHORITY</td>
-      <td>167411</td>
-      <td>0</td>
-      <td>400184</td>
-      <td>NaN</td>
-      <td>567595.43</td>
-      <td>567595.43</td>
-      <td>2011</td>
-      <td>NaN</td>
-      <td>San Francisco</td>
-      <td>NaN</td>
-    </tr>
-    <tr>
-      <th>1</th>
       <td>2</td>
-      <td>GARY JIMENEZ</td>
-      <td>CAPTAIN III (POLICE DEPARTMENT)</td>
-      <td>155966</td>
-      <td>245132</td>
-      <td>137811</td>
-      <td>NaN</td>
-      <td>538909.28</td>
-      <td>538909.28</td>
-      <td>2011</td>
-      <td>NaN</td>
-      <td>San Francisco</td>
-      <td>NaN</td>
-    </tr>
-    <tr>
-      <th>2</th>
       <td>3</td>
+    </tr>
+    <tr>
+      <th>EmployeeName</th>
+      <td>NATHANIEL FORD</td>
+      <td>GARY JIMENEZ</td>
       <td>ALBERT PARDINI</td>
+    </tr>
+    <tr>
+      <th>JobTitle</th>
+      <td>GENERAL MANAGER-METROPOLITAN TRANSIT AUTHORITY</td>
       <td>CAPTAIN III (POLICE DEPARTMENT)</td>
+      <td>CAPTAIN III (POLICE DEPARTMENT)</td>
+    </tr>
+    <tr>
+      <th>BasePay</th>
+      <td>167411</td>
+      <td>155966</td>
       <td>212739</td>
+    </tr>
+    <tr>
+      <th>OvertimePay</th>
+      <td>0</td>
+      <td>245132</td>
       <td>106088</td>
+    </tr>
+    <tr>
+      <th>OtherPay</th>
+      <td>400184</td>
+      <td>137811</td>
       <td>16452.6</td>
+    </tr>
+    <tr>
+      <th>Benefits</th>
       <td>NaN</td>
-      <td>335279.91</td>
-      <td>335279.91</td>
-      <td>2011</td>
       <td>NaN</td>
-      <td>San Francisco</td>
       <td>NaN</td>
     </tr>
     <tr>
-      <th>3</th>
-      <td>4</td>
-      <td>CHRISTOPHER CHONG</td>
-      <td>WIRE ROPE CABLE MAINTENANCE MECHANIC</td>
-      <td>77916</td>
-      <td>56120.7</td>
-      <td>198307</td>
-      <td>NaN</td>
-      <td>332343.61</td>
-      <td>332343.61</td>
+      <th>TotalPay</th>
+      <td>567595</td>
+      <td>538909</td>
+      <td>335280</td>
+    </tr>
+    <tr>
+      <th>TotalPayBenefits</th>
+      <td>567595</td>
+      <td>538909</td>
+      <td>335280</td>
+    </tr>
+    <tr>
+      <th>Year</th>
       <td>2011</td>
+      <td>2011</td>
+      <td>2011</td>
+    </tr>
+    <tr>
+      <th>Notes</th>
       <td>NaN</td>
-      <td>San Francisco</td>
+      <td>NaN</td>
       <td>NaN</td>
     </tr>
     <tr>
-      <th>4</th>
-      <td>5</td>
-      <td>PATRICK GARDNER</td>
-      <td>DEPUTY CHIEF OF DEPARTMENT,(FIRE DEPARTMENT)</td>
-      <td>134402</td>
-      <td>9737</td>
-      <td>182235</td>
-      <td>NaN</td>
-      <td>326373.19</td>
-      <td>326373.19</td>
-      <td>2011</td>
-      <td>NaN</td>
+      <th>Agency</th>
       <td>San Francisco</td>
+      <td>San Francisco</td>
+      <td>San Francisco</td>
+    </tr>
+    <tr>
+      <th>Status</th>
+      <td>NaN</td>
+      <td>NaN</td>
       <td>NaN</td>
     </tr>
   </tbody>
@@ -12396,10 +12385,10 @@ Let's try it out!</p>
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[31]:</div>
+<div class="prompt input_prompt">In&nbsp;[91]:</div>
 <div class="inner_cell">
     <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="n">sf_slaries_df</span><span class="o">.</span><span class="n">tail</span><span class="p">()</span>
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">sf_slaries_df</span><span class="o">.</span><span class="n">sample</span><span class="p">(</span><span class="mi">5</span><span class="p">)</span><span class="o">.</span><span class="n">transpose</span><span class="p">()</span>
 </pre></div>
 
 </div>
@@ -12411,7 +12400,7 @@ Let's try it out!</p>
 
 
 <div class="output_area">
-<div class="prompt output_prompt">Out[31]:</div>
+<div class="prompt output_prompt">Out[91]:</div>
 
 
 <div class="output_html rendered_html output_subarea output_execute_result">
@@ -12420,101 +12409,117 @@ Let's try it out!</p>
   <thead>
     <tr style="text-align: right;">
       <th></th>
-      <th>Id</th>
-      <th>EmployeeName</th>
-      <th>JobTitle</th>
-      <th>BasePay</th>
-      <th>OvertimePay</th>
-      <th>OtherPay</th>
-      <th>Benefits</th>
-      <th>TotalPay</th>
-      <th>TotalPayBenefits</th>
-      <th>Year</th>
-      <th>Notes</th>
-      <th>Agency</th>
-      <th>Status</th>
+      <th>32511</th>
+      <th>27726</th>
+      <th>118413</th>
+      <th>99312</th>
+      <th>46014</th>
     </tr>
   </thead>
   <tbody>
     <tr>
-      <th>148649</th>
-      <td>148650</td>
-      <td>Roy I Tillery</td>
-      <td>Custodian</td>
-      <td>0.00</td>
-      <td>0.00</td>
-      <td>0.00</td>
-      <td>0.00</td>
-      <td>0.00</td>
-      <td>0.00</td>
-      <td>2014</td>
-      <td>NaN</td>
-      <td>San Francisco</td>
-      <td>PT</td>
+      <th>Id</th>
+      <td>32512</td>
+      <td>27727</td>
+      <td>118414</td>
+      <td>99313</td>
+      <td>46015</td>
     </tr>
     <tr>
-      <th>148650</th>
-      <td>148651</td>
-      <td>Not provided</td>
-      <td>Not provided</td>
-      <td>Not Provided</td>
-      <td>Not Provided</td>
-      <td>Not Provided</td>
-      <td>Not Provided</td>
-      <td>0.00</td>
-      <td>0.00</td>
-      <td>2014</td>
+      <th>EmployeeName</th>
+      <td>JASMIN NORWOOD</td>
+      <td>SHALISE BILL-LINCOMB</td>
+      <td>Michael A Jazuk</td>
+      <td>Fredrick A Nelson</td>
+      <td>Amy Gray-Schlink</td>
+    </tr>
+    <tr>
+      <th>JobTitle</th>
+      <td>PUBLIC SERVICE AIDE-SPECIAL PROGRAMS</td>
+      <td>PUBLIC SERVICE AIDE-ASSISTANT TO PROFESSIONALS</td>
+      <td>Senior Stationary Engineer</td>
+      <td>Counselor, Juvenile Hall</td>
+      <td>Utility Plumber</td>
+    </tr>
+    <tr>
+      <th>BasePay</th>
+      <td>7402.37</td>
+      <td>32324.4</td>
+      <td>89084</td>
+      <td>46896.6</td>
+      <td>92823.2</td>
+    </tr>
+    <tr>
+      <th>OvertimePay</th>
+      <td>0</td>
+      <td>147.47</td>
+      <td>16705.9</td>
+      <td>3554.36</td>
+      <td>3576.2</td>
+    </tr>
+    <tr>
+      <th>OtherPay</th>
+      <td>0</td>
+      <td>0</td>
+      <td>11814.3</td>
+      <td>454.84</td>
+      <td>3336.03</td>
+    </tr>
+    <tr>
+      <th>Benefits</th>
       <td>NaN</td>
-      <td>San Francisco</td>
+      <td>NaN</td>
+      <td>35911.5</td>
+      <td>18203.6</td>
+      <td>37939.1</td>
+    </tr>
+    <tr>
+      <th>TotalPay</th>
+      <td>7402.37</td>
+      <td>32471.9</td>
+      <td>117604</td>
+      <td>50905.8</td>
+      <td>99735.4</td>
+    </tr>
+    <tr>
+      <th>TotalPayBenefits</th>
+      <td>7402.37</td>
+      <td>32471.9</td>
+      <td>153516</td>
+      <td>69109.3</td>
+      <td>137674</td>
+    </tr>
+    <tr>
+      <th>Year</th>
+      <td>2011</td>
+      <td>2011</td>
+      <td>2014</td>
+      <td>2013</td>
+      <td>2012</td>
+    </tr>
+    <tr>
+      <th>Notes</th>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
       <td>NaN</td>
     </tr>
     <tr>
-      <th>148651</th>
-      <td>148652</td>
-      <td>Not provided</td>
-      <td>Not provided</td>
-      <td>Not Provided</td>
-      <td>Not Provided</td>
-      <td>Not Provided</td>
-      <td>Not Provided</td>
-      <td>0.00</td>
-      <td>0.00</td>
-      <td>2014</td>
-      <td>NaN</td>
+      <th>Agency</th>
       <td>San Francisco</td>
-      <td>NaN</td>
+      <td>San Francisco</td>
+      <td>San Francisco</td>
+      <td>San Francisco</td>
+      <td>San Francisco</td>
     </tr>
     <tr>
-      <th>148652</th>
-      <td>148653</td>
-      <td>Not provided</td>
-      <td>Not provided</td>
-      <td>Not Provided</td>
-      <td>Not Provided</td>
-      <td>Not Provided</td>
-      <td>Not Provided</td>
-      <td>0.00</td>
-      <td>0.00</td>
-      <td>2014</td>
+      <th>Status</th>
       <td>NaN</td>
-      <td>San Francisco</td>
       <td>NaN</td>
-    </tr>
-    <tr>
-      <th>148653</th>
-      <td>148654</td>
-      <td>Joe Lopez</td>
-      <td>Counselor, Log Cabin Ranch</td>
-      <td>0.00</td>
-      <td>0.00</td>
-      <td>-618.13</td>
-      <td>0.00</td>
-      <td>-618.13</td>
-      <td>-618.13</td>
-      <td>2014</td>
+      <td>FT</td>
       <td>NaN</td>
-      <td>San Francisco</td>
-      <td>PT</td>
+      <td>NaN</td>
     </tr>
   </tbody>
 </table>
@@ -12563,7 +12568,7 @@ Let's try it out!</p>
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[33]:</div>
+<div class="prompt input_prompt">In&nbsp;[86]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="n">sf_slaries_df</span><span class="o">.</span><span class="n">dtypes</span>
@@ -12578,7 +12583,7 @@ Let's try it out!</p>
 
 
 <div class="output_area">
-<div class="prompt output_prompt">Out[33]:</div>
+<div class="prompt output_prompt">Out[86]:</div>
 
 
 
@@ -12607,7 +12612,7 @@ dtype: object</pre>
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[34]:</div>
+<div class="prompt input_prompt">In&nbsp;[87]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="n">sf_slaries_df</span><span class="o">.</span><span class="n">describe</span><span class="p">()</span>
@@ -12622,7 +12627,7 @@ dtype: object</pre>
 
 
 <div class="output_area">
-<div class="prompt output_prompt">Out[34]:</div>
+<div class="prompt output_prompt">Out[87]:</div>
 
 
 <div class="output_html rendered_html output_subarea output_execute_result">
@@ -13601,7 +13606,7 @@ Name: JobTitle, dtype: int64</pre>
 </div>
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<h2 id="Higher-and-lowest-salaries-per-year?-Which-jobs?">Higher and lowest salaries per year? Which jobs?<a class="anchor-link" href="#Higher-and-lowest-salaries-per-year?-Which-jobs?">&#182;</a></h2>
+<h2 id="Highest-and-lowest-salaries-per-year?-Which-jobs?">Highest and lowest salaries per year? Which jobs?<a class="anchor-link" href="#Highest-and-lowest-salaries-per-year?-Which-jobs?">&#182;</a></h2>
 </div>
 </div>
 </div>
@@ -13842,7 +13847,6 @@ Name: JobTitle, dtype: int64</pre>
 <li>The concept of a tidy dataset</li>
 <li>How to load a dataset using Pandas</li>
 <li>How to explore a dataset</li>
-<li>How to make simple plots</li>
 </ul>
 <p>I hope this was insightful! <br>
 See you at a next workshop hopefully.</p>

@@ -13,7 +13,7 @@
 # 
 # Then, activate the environement using: 
 # 
-# `conda activate worshop`
+# `conda activate workshop`
 
 # # The Python data science ecosystem
 
@@ -46,12 +46,14 @@
 
 # This is a very important concept when doing data science. To demonstrate how important it is, let's start by creating a messy one and tidying it.
 
-# In[9]:
+# In[76]:
 
 import pandas as pd
 messy_df = pd.DataFrame({'2016': [1000, 2000, 3000], 
                          '2017': [1200, 1300, 4000], 
-                         'company': ['slack', 'twitter', 'twitch']})
+                         'company': 
+                         ['slack', 'twitter', 'twitch']
+                        })
 
 
 # Here, we have created a fictional dataset that contains earnings for years 2016 and 2017
@@ -69,12 +71,14 @@ messy_df
 
 # Now that we have a "messy" dataset, let's clean it.
 
-# In[24]:
+# In[81]:
 
-tidy_df = pd.melt(messy_df, id_vars=['company'],value_name='earnings', var_name='year')
+tidy_df = pd.melt(messy_df, id_vars=['company'],
+                  value_name='earnings', 
+                  var_name='year')
 
 
-# In[25]:
+# In[82]:
 
 tidy_df
 
@@ -90,12 +94,9 @@ tidy_df
 
 # ## Import pacakges
 
-# In[28]:
+# In[83]:
 
-get_ipython().magic('matplotlib inline')
 import pandas as pd
-import numpy as np
-import matplotlib.pylab as plt
 import missingno as msno
 
 
@@ -107,21 +108,21 @@ import missingno as msno
 # The dataset we will be working with is a CSV file. Fortunately for us, Pandas has a handy method `.read_csv`.
 # Let's try it out!
 
-# In[29]:
+# In[84]:
 
 sf_slaries_df = pd.read_csv('data/Salaries.csv')
 
 
 # ## Data exploration
 
-# In[30]:
+# In[85]:
 
-sf_slaries_df.head()
+sf_slaries_df.head(3).transpose()
 
 
-# In[31]:
+# In[91]:
 
-sf_slaries_df.tail()
+sf_slaries_df.sample(5).transpose()
 
 
 # In[32]:
@@ -129,12 +130,12 @@ sf_slaries_df.tail()
 sf_slaries_df.columns
 
 
-# In[33]:
+# In[86]:
 
 sf_slaries_df.dtypes
 
 
-# In[34]:
+# In[87]:
 
 sf_slaries_df.describe()
 
@@ -158,7 +159,7 @@ sf_slaries_df.JobTitle.value_counts()
 sf_slaries_df.JobTitle.nunique()
 
 
-# ## Higher and lowest salaries per year? Which jobs?
+# ## Highest and lowest salaries per year? Which jobs?
 
 # In[62]:
 
@@ -193,7 +194,6 @@ sf_slaries_df.loc[highest_idx, ['Year', 'JobTitle']]
 # * The concept of a tidy dataset
 # * How to load a dataset using Pandas
 # * How to explore a dataset
-# * How to make simple plots
 # 
 # I hope this was insightful! <br>
 # See you at a next workshop hopefully.
