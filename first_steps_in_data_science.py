@@ -5,7 +5,15 @@
 
 # # Installation
 
-# For new comers, I recommend using the Anacaonda distribution. You can download it from [here](https://www.continuum.io/downloads)
+# For new comers, I recommend using the Anacaonda distribution. You can download it from [here](https://www.continuum.io/downloads).
+# 
+# If you are familiar with Python, create a `conda` environment and install the need libraries (using the `environment.yml` file): 
+# 
+# `conda env create -f environment.yml`
+# 
+# Then, activate the environement using: 
+# 
+# `conda activate worshop`
 
 # # The Python data science ecosystem
 
@@ -36,13 +44,53 @@
 
 # # Tidy data
 
-# This is a very important concept when doing data science
+# This is a very important concept when doing data science. To demonstrate how important it is, let's start by creating a messy one and tidying it.
+
+# In[9]:
+
+import pandas as pd
+messy_df = pd.DataFrame({'2016': [1000, 2000, 3000], 
+                         '2017': [1200, 1300, 4000], 
+                         'company': ['slack', 'twitter', 'twitch']})
+
+
+# Here, we have created a fictional dataset that contains earnings for years 2016 and 2017
+
+# In[10]:
+
+messy_df
+
+
+# You might ask, what is the problem with this dataset? <br>
+# There are two main ones:
+# 
+# * The coloumns 2016 and 2017 contain the same type of variable (earnings)
+# * The columns 2016 and 2017 contain an information about the year 
+
+# Now that we have a "messy" dataset, let's clean it.
+
+# In[24]:
+
+tidy_df = pd.melt(messy_df, id_vars=['company'],value_name='earnings', var_name='year')
+
+
+# In[25]:
+
+tidy_df
+
+
+# That's much better! <br>
+
+# In summary, a tidy dataset has the following properties: 
+#     
+# * Each column represents only one **variable**
+# * Each row represents an **observation**
 
 # # Example
 
 # ## Import pacakges
 
-# In[17]:
+# In[28]:
 
 get_ipython().magic('matplotlib inline')
 import pandas as pd
@@ -59,44 +107,83 @@ import missingno as msno
 # The dataset we will be working with is a CSV file. Fortunately for us, Pandas has a handy method `.read_csv`.
 # Let's try it out!
 
-# In[9]:
+# In[29]:
 
 sf_slaries_df = pd.read_csv('data/Salaries.csv')
 
 
 # ## Data exploration
 
-# In[11]:
+# In[30]:
 
 sf_slaries_df.head()
 
 
-# In[12]:
+# In[31]:
 
 sf_slaries_df.tail()
 
 
-# In[13]:
+# In[32]:
 
 sf_slaries_df.columns
 
 
-# In[14]:
+# In[33]:
 
 sf_slaries_df.dtypes
 
 
-# In[15]:
+# In[34]:
 
 sf_slaries_df.describe()
 
 
-# In[18]:
+# In[35]:
 
 msno.matrix(sf_slaries_df)
 
 
 # ## Some analysis
+
+# ### What are the different job titles? How many?
+
+# In[42]:
+
+sf_slaries_df.JobTitle.value_counts()
+
+
+# In[44]:
+
+sf_slaries_df.JobTitle.nunique()
+
+
+# ## Higher and lowest salaries per year? Which jobs?
+
+# In[62]:
+
+sf_slaries_df.groupby('Year').TotalPay.agg(['min', 'max'])
+
+
+# In[67]:
+
+lowest_idx = sf_slaries_df.groupby('Year').apply(lambda df: df.TotalPay.argmin())
+
+
+# In[74]:
+
+sf_slaries_df.loc[lowest_idx, ['Year', 'JobTitle']]
+
+
+# In[71]:
+
+highest_idx = sf_slaries_df.groupby('Year').apply(lambda df: df.TotalPay.argmax())
+
+
+# In[73]:
+
+sf_slaries_df.loc[highest_idx, ['Year', 'JobTitle']]
+
 
 # # To wrap up
 
