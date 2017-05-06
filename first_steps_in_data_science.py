@@ -3,6 +3,10 @@
 
 #  First steps in data science with Python 
 
+# # Installation
+
+# For new comers, I recommend using the Anacaonda distribution. You can download it from [here](https://www.continuum.io/downloads)
+
 # # The Python data science ecosystem
 
 # ## Jupyter notebook
@@ -30,24 +34,67 @@
 
 # Keep in mind that most of the capabilites of the above package are integrated within the Pandas library.
 
+# # Tidy data
+
+# This is a very important concept when doing data science
+
 # # Example
 
 # ## Import pacakges
 
-# In[4]:
+# In[17]:
 
-get_ipython().magic('matplotlibplotlib inline')
+get_ipython().magic('matplotlib inline')
 import pandas as pd
 import numpy as np
 import matplotlib.pylab as plt
+import missingno as msno
 
 
 # ## Loading data
 
-# Kaggle offers many free datasets with lots of metadata, description, kernels, discussions and so on. <br>
-# Today, we will be working with the San Francisco Salaries dataset. You can download it from here (you need a Kaggle account) or get it from the workshop repository.
+# [Kaggle](https://www.kaggle.com/) offers many free datasets with lots of metadata, descriptions, kernels, discussions and so on. <br>
+# Today, we will be working with the San Francisco Salaries dataset. You can download it from [here](https://www.kaggle.com/kaggle/sf-salaries) (you need a Kaggle account) or get it from the workshop [repository](https://github.com/yassineAlouini/first-steps-data-science/blob/master/data/Salaries.csv).
+
+# The dataset we will be working with is a CSV file. Fortunately for us, Pandas has a handy method `.read_csv`.
+# Let's try it out!
+
+# In[9]:
+
+sf_slaries_df = pd.read_csv('data/Salaries.csv')
+
 
 # ## Data exploration
+
+# In[11]:
+
+sf_slaries_df.head()
+
+
+# In[12]:
+
+sf_slaries_df.tail()
+
+
+# In[13]:
+
+sf_slaries_df.columns
+
+
+# In[14]:
+
+sf_slaries_df.dtypes
+
+
+# In[15]:
+
+sf_slaries_df.describe()
+
+
+# In[18]:
+
+msno.matrix(sf_slaries_df)
+
 
 # ## Some analysis
 
